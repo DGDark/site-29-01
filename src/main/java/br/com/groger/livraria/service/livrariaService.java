@@ -13,4 +13,10 @@ public class livrariaService {
     public livrariaModel cadastrarLivro(livrariaModel livro) {
         return repository.save(livro);
     }
+
+    public Iterable<livrariaModel> listarlivros(){
+        Iterable<livrariaModel> livros = repository.findAll();
+        return livros;
+    }
+
 }

@@ -3,7 +3,7 @@ package br.com.groger.livraria.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Livro")
+@Table(name="livro")
 public class livrariaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,7 +16,10 @@ public class livrariaModel {
     private String autor;
 
     @Column
-    private  String descricao;
+    private String genero;
+
+    @Column
+    private String descricao;
 
     public int getId() {
         return id;
@@ -42,6 +45,14 @@ public class livrariaModel {
         this.autor = autor;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     public String getDescricao() {
         return descricao;
     }
@@ -49,4 +60,9 @@ public class livrariaModel {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    public enum genero{
+        fabula,poesia,romance,conto,autobiografia,biografia,comedia
+    }
+
 }
+
